@@ -1,6 +1,6 @@
 # Movies-Finder
 ## Описание
-GraphQL API на основе The Movie Database REST API. Разработано с использованием:
+Тестовое задание - GraphQL API на основе The Movie Database REST API. Разработано с использованием:
 * SpringBoot
 * Spring Data JPA
 * H2 database
