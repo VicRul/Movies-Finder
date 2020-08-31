@@ -64,7 +64,7 @@
 ```
 * Поиск фильмов по названию (постранично)
 ```graphql
-    uery {
+    query {
       listMoviesByName(title: "Мстители", page: 1){
         page,
         totalPages,
