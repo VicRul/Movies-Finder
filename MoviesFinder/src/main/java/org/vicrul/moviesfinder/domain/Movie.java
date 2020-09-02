@@ -33,32 +33,30 @@ public class Movie implements Serializable {
 	private String overview;
 	@SerializedName("genre_ids")
 	@Expose
-	private List<Integer> genreIds = null;
-
-	private List<Genre> genres = null;
+	private List<Integer> genres = null;
 	
 	public List<Genre> getGenres() throws IOException {
-		int genreIdsSize = this.genreIds.size();
+		int genreIdsSize = this.genres.size();
 		
 		if (genreIdsSize == 0) {
 			return null;
 		}
-		List<Genre> unloadingGenres = new GenreRepo().getAllGenres();
-		this.genres = new ArrayList<Genre>();
+		List<Genre> unloadingGenres = GenreRepo.getAllGenres();
+		List<Genre> genres = new ArrayList<Genre>();
 
 		for (Genre genre : unloadingGenres) {
-			String genreName = genre.getNameById(this.genreIds);
+			String genreName = genre.getNameById(this.genres);
 			
 			if (genreName != null) {
 				genreIdsSize --;
-				this.genres .add(genre);
+				genres.add(genre);
 				
 				if (genreIdsSize == 0) {
 					break;
 				}
 			}
 		}
-		
-		return this.genres;
+		GenreRepo.clearGenresList();
+		return genres;
 	}
 }

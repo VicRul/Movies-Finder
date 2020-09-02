@@ -24,7 +24,6 @@ public class MovieRepo {
 	private <T> T foundMovie(Call<T> searchingMovie) throws Exception {
 		Response<T> execute = searchingMovie.execute();
 		T result = execute.body();
-		new GenreRepo().clearGenresList();
 		return result;
 	}
 

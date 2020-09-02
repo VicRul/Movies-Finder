@@ -18,7 +18,7 @@ public class GenreRepo {
 
 	private static List<Genre> genresList = null;
 
-	public List<Genre> getAllGenres() throws IOException {
+	public static List<Genre> getAllGenres() throws IOException {
 		if (genresList == null || genresList.isEmpty()) {
 			Retrofit retrofit = new Retrofit.Builder().baseUrl("https://api.themoviedb.org/3/")
 					.addConverterFactory(GsonConverterFactory.create()).build();
@@ -30,7 +30,7 @@ public class GenreRepo {
 		return genresList;
 	}
 	
-	public void clearGenresList() {
+	public static void clearGenresList() {
 		if (genresList != null) {
 			genresList.clear();
 		}
