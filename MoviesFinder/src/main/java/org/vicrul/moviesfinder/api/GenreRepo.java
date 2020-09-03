@@ -29,10 +29,4 @@ public class GenreRepo {
 		}
 		return genresList;
 	}
-	
-	public static void clearGenresList() {
-		if (genresList != null) {
-			genresList.clear();
-		}
-	}
 }

@@ -56,7 +56,6 @@ public class Movie implements Serializable {
 				}
 			}
 		}
-		GenreRepo.clearGenresList();
 		return genres;
 	}
 }

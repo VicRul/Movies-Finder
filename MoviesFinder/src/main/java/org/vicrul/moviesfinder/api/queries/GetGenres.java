@@ -7,6 +7,6 @@ import retrofit2.http.GET;
 
 public interface GetGenres {
 
-	@GET("genre/movie/list?api_key=67f7e969d680de8d4117972f8ca3884d&language=ru")
+	@GET("genre/movie/list?api_key=7d390a86785cece213ab038481248e69&language=ru")
 	Call<GenresList> getGenres();
 }

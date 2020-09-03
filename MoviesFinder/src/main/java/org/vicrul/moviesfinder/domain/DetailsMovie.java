@@ -7,23 +7,13 @@ import java.util.List;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-import lombok.Data;
+import lombok.Setter;
+import lombok.Getter;
 
-@Data
-public class DetailsMovie implements Serializable {
+@Getter
+@Setter
+public class DetailsMovie extends Movie implements Serializable {
 	private static final long serialVersionUID = 1L;
-	@SerializedName("id")
-	@Expose
-	private int id;
-	@SerializedName("title")
-	@Expose
-	private String title;
-	@SerializedName("release_date")
-	@Expose
-	private String releaseDate;
-	@SerializedName("overview")
-	@Expose
-	private String overview;
 	@SerializedName("genres")
 	@Expose
 	private List<Genre> genres = null;
@@ -51,5 +41,6 @@ public class DetailsMovie implements Serializable {
 	@SerializedName("vote_count")
 	@Expose
 	private int voteCount;
+	
 	
 }
