@@ -41,7 +41,7 @@ public class Movie implements Serializable {
 		if (genreIdsSize == 0) {
 			return null;
 		}
-		List<Genre> unloadingGenres = GenreRepo.getAllGenres();
+		List<Genre> unloadingGenres = new GenreRepo().getAllGenres();
 		List<Genre> genres = new ArrayList<Genre>();
 
 		for (Genre genre : unloadingGenres) {

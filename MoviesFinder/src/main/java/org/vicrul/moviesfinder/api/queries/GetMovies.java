@@ -10,12 +10,12 @@ import retrofit2.http.Query;
 
 public interface GetMovies {
 		
-	@GET("movie/{movie_id}?api_key=7d390a86785cece213ab038481248e69&language=ru-RU")
-	Call<DetailsMovie> getMovieById(@Path("movie_id") int movieId);
+	@GET("movie/{movie_id}?language=ru-RU")
+	Call<DetailsMovie> getMovieById(@Path("movie_id") int movieId, @Query("api_key") String apiKey);
 	
-	@GET("movie/popular?api_key=7d390a86785cece213ab038481248e69&language=ru-RU")
-	Call<MoviesList> getListPopularMovies(@Query("page") int pageNumber);
+	@GET("movie/popular?language=ru-RU")
+	Call<MoviesList> getListPopularMovies(@Query("api_key") String apiKey, @Query("page") int pageNumber);
 	
-	@GET("search/movie?api_key=7d390a86785cece213ab038481248e69&language=ru-RU")
-	Call<MoviesList> getMoviesByName(@Query("query") String name, @Query("page") int pageNumber);
+	@GET("search/movie?language=ru-RU")
+	Call<MoviesList> getMoviesByName(@Query("api_key") String apiKey, @Query("query") String name, @Query("page") int pageNumber);
 }
